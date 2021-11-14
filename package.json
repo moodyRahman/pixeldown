@@ -1,0 +1,8 @@
+{
+  "name": "pixeldown",
+  "version": "1.0.0",
+  "description": "the server is down :(",
+  "main": "server.js",
+  "license": "MIT",
+  "author": "moody"
+}
