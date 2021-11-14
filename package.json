@@ -4,5 +4,9 @@
   "description": "the server is down :(",
   "main": "server.js",
   "license": "MIT",
-  "author": "moody"
+  "author": "moody",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "type": "module"
 }
