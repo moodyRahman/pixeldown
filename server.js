@@ -1,17 +1,26 @@
 import express from "express"
 import { exec } from "child_process"
-
+import cors from "cors"
 const app = express()
 const port = 3005
 
 app.use(express.json())
+
+// var corsOptions = {
+//     origin: 'http://moodyrahman.com',
+//     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+//   }
+app.use(cors())
+
+
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
 app.post('/start', (req, res) => {
-    console.log(req.body)
+    console.log(req.get('origin'))
+    
     exec("screen -S mc_server -p 0 -X stuff \"echo hi im moody ^M\"", (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
